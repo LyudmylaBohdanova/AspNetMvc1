@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Manufacturer";
+}
+
+<h2>Manufacturer</h2>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="text-align:center">Id</th>
+            <th style="text-align:center">Manufacturer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in ViewBag.Manufacturer)
+        {
+            <tr>
+                <td>@m.ManufacturerId</td>
+                <td>@m.ManufacturerName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!--
+<button class="btn-warning btn-lg">
+    <a href="/Shop/" style="text-decoration:none; color:white">
+        Go to home
+    </a>
+</button>
+-->
