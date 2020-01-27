@@ -14,6 +14,7 @@
             <th style="text-align:center">Manufacturer</th>
             <th style="text-align:center">Price</th>
             <th style="text-align:center">Count</th>
+            <th style="text-align:center">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -26,15 +27,17 @@
                 <td>@g.ManufacturerName</td>
                 <td>@g.Price</td>
                 <td>@g.GoodCount</td>
+                <td style="text-align:center">
+                    @Html.ActionLink("Delete", "DeleteGoods", new {@id = g.GoodId}, new {@class = "btn btn-outline-danger" })
+                </td>
             </tr>
         }
     </tbody>
 </table>
+<div id="paging" style="text-align:right;">
+    @for (int i = 0; i < ViewBag.PageCount; i++)
+    {
+        @Html.ActionLink($"{i + 1}", "Goods", new {@id = i + 1 }, new {@class = "btn btn-outline-secondary", @style="margin-right:5px;"})
+    }
+</div>
 
-<!--
-<button class="btn-warning btn-lg">
-    <a href="/Shop/" style="text-decoration:none; color:white">
-        Go to home
-    </a>
-</button>
--->

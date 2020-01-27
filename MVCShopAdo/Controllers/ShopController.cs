@@ -20,27 +20,43 @@ namespace MVCShopAdo.Controllers
         {
             kernel = new StandardKernel(new DIModule());
         }
-        // GET: Home
         /*
-        public ActionResult Index()
-        {
-            return View();
-        }
+        
         */
-        public ActionResult Goods()
+        public ActionResult Goods(int id = 1)
         {
-            ViewBag.Goods = serviceGood.ListAll();
+            ViewBag.PageCount = (int)Math.Ceiling(serviceGood.ListAll().Count() / 6.0);
+            ViewBag.Goods = serviceGood.ListAll().Skip((id - 1) * 6).Take(6);
             return View();
         }
-        public ActionResult Categories()
+        public ActionResult Categories(int id = 1)
         {
-            ViewBag.Categories = serviceCategory.ListAll();
+            ViewBag.PageCount = (int)Math.Ceiling(serviceCategory.ListAll().Count() / 6.0);
+            ViewBag.Categories = serviceCategory.ListAll().Skip((id - 1) * 6).Take(6);
             return View();
         }
-        public ActionResult Manufacturer()
+        public ActionResult Manufacturer(int id = 1)
         {
-            ViewBag.Manufacturer = serviceManufacturer.ListAll();
+            ViewBag.PageCount = (int)Math.Ceiling(serviceManufacturer.ListAll().Count() / 6.0);
+            ViewBag.Manufacturer = serviceManufacturer.ListAll().Skip((id - 1) * 6).Take(6);
             return View();
+        }
+        public ActionResult DeleteGoods(int id)
+        {
+            serviceGood.Remove(serviceGood.Get(id));
+            return RedirectToAction("Goods");
+        }
+        public ActionResult DeleteCategories(int id)
+        {
+            CategoryDTO category = serviceCategory.Get(id);
+            serviceCategory.Remove(category);
+            return RedirectToAction("Categories");
+        }
+        public ActionResult DeleteManufacturer(int id)
+        {
+            ManufacturerDTO manufacturer = serviceManufacturer.Get(id);
+            serviceManufacturer.Remove(manufacturer);
+            return RedirectToAction("Manufacturer");
         }
     }
 }
