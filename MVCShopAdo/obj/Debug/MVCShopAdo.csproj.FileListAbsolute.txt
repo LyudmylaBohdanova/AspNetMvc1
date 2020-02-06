@@ -79,3 +79,6 @@ D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\Ninject.xml
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\EntityFramework.xml
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\EntityFramework.SqlServer.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\EntityFramework.SqlServer.xml
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\AutoMapper.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\AutoMapper.pdb
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\AutoMapper.xml

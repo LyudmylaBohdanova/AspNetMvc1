@@ -1,37 +1,24 @@
-﻿
+﻿@using MVCShopAdo.Models
+@model IEnumerable<CategoryView>
 @{
     ViewBag.Title = "Categories";
+    var options = new AjaxOptions
+    {
+        UpdateTargetId = "info"
+    };
 }
-
+<br>
 <h2>Categories</h2>
 
+<div id="info">
+    @Html.Action("TableCategories")
+</div>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th style="text-align:center">Id</th>
-            <th style="text-align:center">Category</th>
-            <th style="text-align:center">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var c in ViewBag.Categories)
-        {
-        <tr>
-            <td>@c.CategoryId</td>
-            <td>@c.CategoryName</td>
-            <td style="text-align:center">
-                @Html.ActionLink("Delete", "DeleteCategories", new { @id = c.CategoryId }, 
-               new { @class = "btn btn-outline-danger" })
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
 <div id="paging" style="text-align:right;">
     @for (int i = 0; i < ViewBag.PageCount; i++)
     {
-        @Html.ActionLink($"{i + 1}", "Categories", new { @id = i + 1 }, new { @class = "btn btn-outline-secondary", @style = "margin-right:5px;" })
+        @Html.ActionLink($"{i + 1}", "Categories", new { @id = i + 1 }, 
+       new { @class = "btn btn-outline-secondary", @style = "margin-right:5px;" })
     }
 </div>
 

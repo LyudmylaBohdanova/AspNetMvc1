@@ -1,0 +1,25 @@
+﻿@using MVCShopAdo.Models
+@model IEnumerable<ManufacturerView>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="text-align:center">Id</th>
+            <th style="text-align:center">Manufacturer</th>
+            <th style="text-align:center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var man in Model)
+        {
+            <tr>
+                <td>@man.ManufacturerId</td>
+                <td>@man.ManufacturerName</td>
+                <td style="text-align:center">
+                    @Html.ActionLink("Delete", "DeleteManufacturer", new { @id = man.ManufacturerId },
+                   new { @class = "btn btn-outline-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
