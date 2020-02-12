@@ -1,0 +1,24 @@
+﻿@using MVCShopAdo.Models
+@model IEnumerable<CategoryView>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="text-align:center">Id</th>
+            <th style="text-align:center">Category</th>
+            <th style="text-align:center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cat in Model)
+        {
+            <tr>
+                <td>@cat.CategoryId</td>
+                <td>@cat.CategoryName</td>
+                <td style="text-align:center">
+                    @Html.ActionLink("Edit", "EditCategory", "Edit", new { @id = cat.CategoryId }, new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

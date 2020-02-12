@@ -1,0 +1,32 @@
+﻿@using MVCShopAdo.Models
+@model IEnumerable<GoodView>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="text-align:center">ID</th>
+            <th style="text-align:center">Good</th>
+            <th style="text-align:center">Category</th>
+            <th style="text-align:center">Manufacturer</th>
+            <th style="text-align:center">Price</th>
+            <th style="text-align:center">Count</th>
+            <th style="text-align:center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var good in Model)
+        {
+            <tr>
+                <td>@good.GoodId</td>
+                <td>@good.GoodName</td>
+                <td>@good.CategoryName</td>
+                <td>@good.ManufacturerName</td>
+                <td>@Math.Round(good.Price, 2)</td>
+                <td>@Math.Round(good.GoodCount, 0)</td>
+                <td style="text-align:center">
+                    @Html.ActionLink("Edit", "EditGood", "Edit", new { @id = good.GoodId }, new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

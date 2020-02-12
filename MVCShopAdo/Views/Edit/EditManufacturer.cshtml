@@ -1,0 +1,33 @@
+﻿@using MVCShopAdo.Models
+@model ManufacturerView
+
+
+<form class="was-validated" method="post" action="~/Edit/EditManufacturer">
+    <div class="modal-content" style="width:100%">
+        <div class="modal-header">
+            <h4 class="modal-title" id="editModalLabel">Manufacturer edit</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <input id="manufacturerId" name="ManufacturerId" type="hidden" value="@Model.ManufacturerId" />
+            <label for="manufacturername">Manufacturer name</label>
+            <input class="form-control form-control-lg col-12" type="text" id="manufacturername" name="ManufacturerName"
+                   value="@Model.ManufacturerName" required />
+            <div class="invalid-feedback">Please enter a manufacturer name</div>
+        </div>
+        <div class="modal-footer d-flex">
+            <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
+            @if (Model.ManufacturerId == 0)
+            {
+                <button name="action" type="submit" class="btn btn-info" value="add">Add manufacturer</button>
+            }
+            else
+            {
+                <button name="action" type="submit" class="btn btn-warning mr-auto" value="save">Save change</button>
+                <button name="action" type="submit" class="btn btn-danger" value="delete">Delete</button>
+            }
+        </div>
+    </div>
+</form>

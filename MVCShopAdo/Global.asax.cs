@@ -13,8 +13,10 @@ namespace MVCShopAdo
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            DependencyResolver.SetResolver(new NinjectDR());
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            DependencyResolver.SetResolver(new NinjectDR());
+            HtmlHelper.ClientValidationEnabled = true;
+            HtmlHelper.UnobtrusiveJavaScriptEnabled = true;
         }
     }
 }

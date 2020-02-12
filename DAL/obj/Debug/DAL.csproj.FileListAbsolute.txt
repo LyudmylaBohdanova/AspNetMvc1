@@ -1,0 +1,12 @@
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\bin\Debug\DAL.dll.config
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\bin\Debug\DAL.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\bin\Debug\DAL.pdb
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\bin\Debug\EntityFramework.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\bin\Debug\EntityFramework.xml
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\obj\Debug\DAL.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\DAL\obj\Debug\DAL.pdb

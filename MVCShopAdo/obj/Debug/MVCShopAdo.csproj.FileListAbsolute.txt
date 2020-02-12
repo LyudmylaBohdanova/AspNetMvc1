@@ -26,16 +26,11 @@ D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\Syst
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.IO.Compression.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.IO.FileSystem.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.IO.FileSystem.Primitives.dll
-D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.IO.Pipes.AccessControl.dll
-D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.IO.Pipes.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Reflection.Metadata.dll
-D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Security.AccessControl.dll
-D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Security.Claims.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Security.Cryptography.Algorithms.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Security.Cryptography.Encoding.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Security.Cryptography.Primitives.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Security.Principal.Windows.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Text.Encoding.CodePages.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.ValueTuple.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Xml.ReaderWriter.dll
@@ -72,7 +67,6 @@ D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\DAL.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\Ninject.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\EntityFramework.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\BLL.pdb
-D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\BLL.dll.config
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\DAL.pdb
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\DAL.dll.config
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\Ninject.xml
@@ -82,3 +76,12 @@ D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\EntityFrame
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\AutoMapper.dll
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\AutoMapper.pdb
 D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\AutoMapper.xml
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\BLL.dll.config
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Globalization.Calendars.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Net.Http.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Net.Sockets.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Documents\Людочка\ШАГ\VS2017\MVCProject1\MVCShopAdo\bin\roslyn\System.Threading.Tasks.Extensions.dll
