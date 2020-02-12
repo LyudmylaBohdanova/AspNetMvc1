@@ -3,7 +3,9 @@
 
 
 <form class="was-validated" method="post" action="~/Edit/EditCategory">
-    <div class="modal-content" style="width:100%" id="frmEmp">
+
+    @Html.AntiForgeryToken()
+    <div class="modal-content" style="width:100%" id="editmodal">
         <div class="modal-header">
             <h4 class="modal-title" id="editModalLabel">Category edit</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -15,7 +17,8 @@
                 <input id="categoryId" name="CategoryId" type="hidden" value="@Model.CategoryId" />
                 <label for="categoryname">Category name</label>
                 <input class="form-control form-control-lg col-12" type="text" id="categoryname" name="CategoryName"
-                       value="@Model.CategoryName" required/>
+                       value="@Model.CategoryName" required />
+                @Html.ValidationMessageFor(x => x.CategoryName)
                 <div class="invalid-feedback">Please enter a category name</div>
             </div>
         </div>

@@ -58,7 +58,7 @@ namespace MVCShopAdo.Controllers
         public ActionResult EditGood (GoodView good, string action)
         {
             if (ModelState.IsValid)
-                if (action == "save" || action == "add")
+                if (action == "add" || action == "save")
                     services.serviceGood.CreateOrUpdate(good);
                 else if (action == "delete")
                     services.serviceGood.Remove(good);
@@ -67,21 +67,15 @@ namespace MVCShopAdo.Controllers
         }
 
         [HttpPost]
+        [HandleError]
+        [ValidateAntiForgeryToken]
         public ActionResult EditCategory(CategoryView category, string action) 
         {
             if (ModelState.IsValid)
-                if (action == "save")
-                {
-                    TempData["message"] = string.Format("{0} has been saved", category.CategoryName);
+                if (action == "save" || action == "add")
                     services.serviceCategory.CreateOrUpdate(category);
-                    ViewBag.Message = "Category saved";
-                    ModelState.Clear();
-                }
                 else if (action == "delete")
-                {
-                    TempData["message"] = string.Format("{0} has been deleted", category.CategoryName);
                     services.serviceCategory.Remove(category);
-                }
             return RedirectToAction("Categories", "Shop");
         }
 
@@ -89,7 +83,7 @@ namespace MVCShopAdo.Controllers
         public ActionResult EditManufacturer(ManufacturerView manufacturer, string action)
         {
             if (ModelState.IsValid)
-                if (action == "save" || action == "add")
+                if (action == "add" || action == "save")
                     services.serviceManufacturer.CreateOrUpdate(manufacturer);
                 else if (action == "delete")
                     services.serviceManufacturer.Remove(manufacturer);

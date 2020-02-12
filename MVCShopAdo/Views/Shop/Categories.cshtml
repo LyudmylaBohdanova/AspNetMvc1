@@ -16,7 +16,7 @@
 
 <div class="d-flex">
     <div class="mr-auto" style="text-align:left;">
-        @Html.ActionLink("Add new category", "EditCategory", "Edit", new { @id = 0 }, 
+        @Html.ActionLink("Add new category", "EditCategory", "Edit", new { @id = 0 },
        new { @class = "btn btn-info compItem", @toggle = "modal", @target = "#editModal" })
     </div>
     <div id="paging" style="text-align:right;">
@@ -29,5 +29,6 @@
 </div>
 
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog" id="dialogContent" role="document"></div>
+    <div class="modal-dialog" id="dialogContent" role="document">
+    </div>
 </div>
