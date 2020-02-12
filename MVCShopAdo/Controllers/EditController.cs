@@ -67,7 +67,6 @@ namespace MVCShopAdo.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult EditCategory(CategoryView category, string action) 
         {
             if (ModelState.IsValid)
