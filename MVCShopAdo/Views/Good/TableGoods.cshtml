@@ -1,5 +1,5 @@
 ﻿@using MVCShopAdo.Models
-@model IEnumerable<GoodView>
+@model IEnumerable<GoodViewModel>
 
 <table class="table table-bordered">
     <thead>
@@ -24,7 +24,8 @@
                 <td>@Math.Round(good.Price, 2)</td>
                 <td>@Math.Round(good.GoodCount, 0)</td>
                 <td style="text-align:center">
-                    @Html.ActionLink("Edit", "EditGood", "Edit", new { @id = good.GoodId }, new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
+                    @Html.ActionLink("Edit", "EditGood", "Good", new { @id = good.GoodId }, 
+                   new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
                 </td>
             </tr>
         }

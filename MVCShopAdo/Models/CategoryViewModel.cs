@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MVCShopAdo.Models
 {
-    public class CategoryView
+    public class CategoryViewModel
     {
         [HiddenInput(DisplayValue = false)]
         public int CategoryId { get; set; }

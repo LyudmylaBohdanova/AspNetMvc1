@@ -220,23 +220,25 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Web.config" />
-    <Content Include="Views\Shop\Goods.cshtml" />
-    <Content Include="Views\Shop\Categories.cshtml" />
-    <Content Include="Views\Shop\Manufacturer.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Good\Goods.cshtml" />
+    <Content Include="Views\Category\Categories.cshtml" />
+    <Content Include="Views\Manufacturer\Manufacturer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\EditController.cs" />
-    <Compile Include="Controllers\PartialShopController.cs" />
-    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\GoodController.cs" />
+    <Compile Include="Controllers\ManufacturerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectDR.cs" />
-    <Compile Include="Models\CategoryView.cs" />
-    <Compile Include="Models\GoodView.cs" />
-    <Compile Include="Models\ManufacturerView.cs" />
+    <Compile Include="Models\CategoryViewModel.cs" />
+    <Compile Include="Models\GoodViewModel.cs" />
+    <Compile Include="Models\ManufacturerViewModel.cs" />
     <Compile Include="Models\ShopViewServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceView\CategoryViewService.cs" />
@@ -251,10 +253,10 @@
     </None>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\PartialShop\TableGoods.cshtml" />
-    <Content Include="Views\PartialShop\TableCategories.cshtml" />
-    <Content Include="Views\PartialShop\TableManufacturers.cshtml" />
-    <Content Include="Views\Edit\EditGood.cshtml" />
+    <Content Include="Views\Good\TableGoods.cshtml" />
+    <Content Include="Views\Category\TableCategories.cshtml" />
+    <Content Include="Views\Manufacturer\TableManufacturers.cshtml" />
+    <Content Include="Views\Good\EditGood.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -265,8 +267,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Edit\EditCategory.cshtml" />
-    <Content Include="Views\Edit\EditManufacturer.cshtml" />
+    <Content Include="Views\Category\EditCategory.cshtml" />
+    <Content Include="Views\Manufacturer\EditManufacturer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

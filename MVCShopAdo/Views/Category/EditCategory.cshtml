@@ -1,8 +1,8 @@
 ﻿@using MVCShopAdo.Models
-@model CategoryView
+@model CategoryViewModel
 
 
-<form class="was-validated" method="post" action="~/Edit/EditCategory">
+<form class="was-validated" method="post" action="~/Category/EditCategory">
 
     @Html.AntiForgeryToken()
     <div class="modal-content" style="width:100%" id="editmodal">
@@ -26,12 +26,13 @@
             <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
             @if (Model.CategoryId == 0)
             {
-                <button name="action" type="submit" class="btn btn-info" value="save">Add category</button>
+                <button name="action" type="submit" class="btn btn-info" value="add">Add category</button>
             }
             else
             {
                 <button name="action" type="submit" class="btn btn-warning mr-auto" value="save">Save change</button>
                 <button name="action" type="submit" class="btn btn-danger" value="delete">Delete</button>
+
             }
         </div>
     </div>

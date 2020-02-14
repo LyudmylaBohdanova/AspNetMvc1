@@ -1,5 +1,5 @@
 ﻿@using MVCShopAdo.Models
-@model IEnumerable<CategoryView>
+@model IEnumerable<CategoryViewModel>
 
 <table class="table table-bordered">
     <thead>
@@ -16,7 +16,8 @@
                 <td>@cat.CategoryId</td>
                 <td>@cat.CategoryName</td>
                 <td style="text-align:center">
-                    @Html.ActionLink("Edit", "EditCategory", "Edit", new { @id = cat.CategoryId }, new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
+                    @Html.ActionLink("Edit", "EditCategory", "Category", new { @id = cat.CategoryId }, 
+                   new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
                 </td>
             </tr>
         }

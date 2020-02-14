@@ -28,9 +28,9 @@ namespace MVCShopAdo.Infrastructure
         }
         private void AddBindings()
         {
-            kernel.Bind<IServiceView<CategoryView>>().To<CategoryViewService>();
-            kernel.Bind<IServiceView<GoodView>>().To<GoodViewService>();
-            kernel.Bind<IServiceView<ManufacturerView>>().To<ManufacturerViewService>();
+            kernel.Bind<IServiceView<CategoryViewModel>>().To<CategoryViewService>();
+            kernel.Bind<IServiceView<GoodViewModel>>().To<GoodViewService>();
+            kernel.Bind<IServiceView<ManufacturerViewModel>>().To<ManufacturerViewService>();
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MVCShopAdo.Models
 {
-    public class GoodView
+    public class GoodViewModel
     {
         [HiddenInput(DisplayValue = false)]
         public int GoodId { get; set; }

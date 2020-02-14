@@ -1,5 +1,5 @@
 ﻿@using MVCShopAdo.Models
-@model IEnumerable<ManufacturerView>
+@model IEnumerable<ManufacturerViewModel>
 
 <table class="table table-bordered">
     <thead>
@@ -16,7 +16,8 @@
                 <td>@man.ManufacturerId</td>
                 <td>@man.ManufacturerName</td>
                 <td style="text-align:center">
-                    @Html.ActionLink("Edit", "EditManufacturer", "Edit", new { @id = man.ManufacturerId }, new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
+                    @Html.ActionLink("Edit", "EditManufacturer", "Manufacturer", new { @id = man.ManufacturerId }, 
+                   new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
                 </td>
             </tr>
         }

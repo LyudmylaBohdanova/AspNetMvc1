@@ -16,7 +16,7 @@ namespace MVCShopAdo
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Shop", action = "Goods", id = UrlParameter.Optional }
+                defaults: new { controller = "Good", action = "Goods", id = UrlParameter.Optional }
             );
         }
     }

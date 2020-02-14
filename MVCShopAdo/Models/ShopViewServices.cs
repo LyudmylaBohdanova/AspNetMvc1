@@ -10,12 +10,12 @@ namespace MVCShopAdo.Models
 {
     public class ShopViewServices
     {
-        public IServiceView<GoodView> serviceGood;
-        public IServiceView<ManufacturerView> serviceManufacturer;
-        public IServiceView<CategoryView> serviceCategory;
+        public IServiceView<GoodViewModel> serviceGood;
+        public IServiceView<ManufacturerViewModel> serviceManufacturer;
+        public IServiceView<CategoryViewModel> serviceCategory;
 
-        public ShopViewServices(IServiceView<GoodView> serviceGood, IServiceView<CategoryView> serviceCategory,
-            IServiceView<ManufacturerView> serviceManufacturer)
+        public ShopViewServices(IServiceView<GoodViewModel> serviceGood, IServiceView<CategoryViewModel> serviceCategory,
+            IServiceView<ManufacturerViewModel> serviceManufacturer)
         {
             this.serviceGood = serviceGood;
             this.serviceCategory = serviceCategory;

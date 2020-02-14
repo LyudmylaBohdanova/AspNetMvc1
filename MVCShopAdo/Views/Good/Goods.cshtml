@@ -1,0 +1,46 @@
+﻿@using MVCShopAdo.Models
+@model IEnumerable<GoodViewModel>
+@{
+    ViewBag.Title = "Goods";
+    var options = new AjaxOptions
+    {
+        UpdateTargetId = "info"
+    };
+}
+<br>
+<h2>Goods</h2>
+
+@if (ViewData["Error"] != null)
+{
+    <div class="alert-danger">
+        <p><strong>Error:</strong> @ViewData["Error"].ToString()</p>
+    </div>
+}
+@if (TempData["Success"] != null)
+{
+    <div class="alert-success">
+        <p><strong>Success:</strong> @TempData["Success"].ToString()</p>
+    </div>
+}
+
+<div id="info">
+    @Html.Action("TableGoods", "Good")
+</div>
+
+<div class="d-flex">
+    <div class="mr-auto" style="text-align:left;">
+        @Html.ActionLink("Add new good", "EditGood", "Good", new { @id = 0 },
+       new { @class = "btn btn-info compItem", @toggle = "modal", @target = "#editModal" })
+    </div>
+    <div id="paging" style="text-align:right;">
+        @for (int i = 0; i < ViewBag.PageCount; i++)
+        {
+            @Ajax.ActionLink($"{i + 1}", "Goods", new { id = i + 1 },
+            options, new { @class = "btn btn-outline-secondary", @style = "margin-right:5px;"});
+        }
+    </div>
+</div>
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" id="dialogContent" role="document"></div>
+</div>

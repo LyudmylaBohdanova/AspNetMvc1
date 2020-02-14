@@ -9,7 +9,7 @@ using System.Web;
 
 namespace MVCShopAdo.ServiceView
 {
-    public class ManufacturerViewService : IServiceView<ManufacturerView>
+    public class ManufacturerViewService : IServiceView<ManufacturerViewModel>
     {
         IService<ManufacturerDTO> service;
         IMapper mapper;
@@ -19,34 +19,34 @@ namespace MVCShopAdo.ServiceView
             this.service = service;
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<ManufacturerView, ManufacturerDTO>();
-                cfg.CreateMap<ManufacturerDTO, ManufacturerView>();
+                cfg.CreateMap<ManufacturerViewModel, ManufacturerDTO>();
+                cfg.CreateMap<ManufacturerDTO, ManufacturerViewModel>();
             });
             mapper = config.CreateMapper();
         }
-        public ManufacturerView CreateOrUpdate(ManufacturerView data)
+        public ManufacturerViewModel CreateOrUpdate(ManufacturerViewModel data)
         {
             ManufacturerDTO manufacturer = mapper.Map<ManufacturerDTO>(data);
             service.CreateOrUpdate(manufacturer);
-            return mapper.Map<ManufacturerView>(manufacturer);
+            return mapper.Map<ManufacturerViewModel>(manufacturer);
         }
 
-        public ManufacturerView Get(int id)
+        public ManufacturerViewModel Get(int id)
         {
             ManufacturerDTO manufacturer = service.Get(id);
-            return mapper.Map<ManufacturerView>(manufacturer);
+            return mapper.Map<ManufacturerViewModel>(manufacturer);
         }
 
-        public IEnumerable<ManufacturerView> GetAll()
+        public IEnumerable<ManufacturerViewModel> GetAll()
         {
-            return service.GetAll().Select(x => mapper.Map<ManufacturerView>(x));
+            return service.GetAll().Select(x => mapper.Map<ManufacturerViewModel>(x));
         }
 
-        public ManufacturerView Remove(ManufacturerView data)
+        public ManufacturerViewModel Remove(ManufacturerViewModel data)
         {
             ManufacturerDTO manufacturer = mapper.Map<ManufacturerDTO>(data);
             service.Remove(manufacturer);
-            return mapper.Map<ManufacturerView>(manufacturer);
+            return mapper.Map<ManufacturerViewModel>(manufacturer);
         }
 
         public void Save()

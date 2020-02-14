@@ -1,8 +1,9 @@
 ﻿@using MVCShopAdo.Models
-@model GoodView
+@model GoodViewModel
 
 
-<form class="was-validated" method="post" action="~/Edit/EditGood">
+<form class="was-validated" method="post" action="~/Good/EditGood">
+    @Html.AntiForgeryToken()
     <div class="modal-content" style="width:100%">
         <div class="modal-header">
             <h4 class="modal-title" id="editModalLabel">Good edit</h4>
@@ -26,7 +27,7 @@
                     {
                         <option value="" selected></option>
                     }
-                    @foreach (CategoryView c in ViewBag.Category)
+                    @foreach (CategoryViewModel c in ViewBag.Category)
                     {
                         if (c.CategoryId == Model.CategoryId)
                         {
@@ -50,7 +51,7 @@
                     {
                         <option value=""></option>
                     }
-                    @foreach (ManufacturerView m in ViewBag.Manufacturer)
+                    @foreach (ManufacturerViewModel m in ViewBag.Manufacturer)
                     {
                         if (m.ManufacturerId == Model.ManufacturerId)
                         {
@@ -90,7 +91,7 @@
             }
             else
             {
-                <button name="action" type="submit" class="btn btn-warning mr-auto" value="save" onclick="gfg_Run()">Save change</button>
+                <button name="action" type="submit" class="btn btn-warning mr-auto" value="save">Save change</button>
                 <button name="action" type="submit" class="btn btn-danger" value="delete">Delete</button>
             }
         </div>

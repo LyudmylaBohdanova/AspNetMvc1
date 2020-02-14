@@ -9,7 +9,7 @@ using System.Web;
 
 namespace MVCShopAdo.ServiceView
 {
-    public class CategoryViewService : IServiceView<CategoryView>
+    public class CategoryViewService : IServiceView<CategoryViewModel>
     {
         IService<CategoryDTO> service;
         IMapper mapper;
@@ -19,34 +19,34 @@ namespace MVCShopAdo.ServiceView
             this.service = service;
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<CategoryView, CategoryDTO>();
-                cfg.CreateMap<CategoryDTO, CategoryView>();
+                cfg.CreateMap<CategoryViewModel, CategoryDTO>();
+                cfg.CreateMap<CategoryDTO, CategoryViewModel>();
             });
             mapper = config.CreateMapper();
         }
-        public CategoryView CreateOrUpdate(CategoryView data)
+        public CategoryViewModel CreateOrUpdate(CategoryViewModel data)
         {
             CategoryDTO category = mapper.Map<CategoryDTO>(data);
             service.CreateOrUpdate(category);
-            return mapper.Map<CategoryView>(category);
+            return mapper.Map<CategoryViewModel>(category);
         }
 
-        public CategoryView Get(int id)
+        public CategoryViewModel Get(int id)
         {
             CategoryDTO category = service.Get(id);
-            return mapper.Map<CategoryView>(category);
+            return mapper.Map<CategoryViewModel>(category);
         }
 
-        public IEnumerable<CategoryView> GetAll()
+        public IEnumerable<CategoryViewModel> GetAll()
         {
-            return service.GetAll().Select(x => mapper.Map<CategoryView>(x));
+            return service.GetAll().Select(x => mapper.Map<CategoryViewModel>(x));
         }
 
-        public CategoryView Remove(CategoryView data)
+        public CategoryViewModel Remove(CategoryViewModel data)
         {
             CategoryDTO category = mapper.Map<CategoryDTO>(data);
             service.Remove(category);
-            return mapper.Map<CategoryView>(category);
+            return mapper.Map<CategoryViewModel>(category);
         }
 
         public void Save()

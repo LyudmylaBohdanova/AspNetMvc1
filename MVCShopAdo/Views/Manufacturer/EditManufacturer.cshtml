@@ -1,8 +1,9 @@
 ﻿@using MVCShopAdo.Models
-@model ManufacturerView
+@model ManufacturerViewModel
 
 
-<form class="was-validated" method="post" action="~/Edit/EditManufacturer">
+<form class="was-validated" method="post" action="~/Manufacturer/EditManufacturer">
+    @Html.AntiForgeryToken()
     <div class="modal-content" style="width:100%">
         <div class="modal-header">
             <h4 class="modal-title" id="editModalLabel">Manufacturer edit</h4>

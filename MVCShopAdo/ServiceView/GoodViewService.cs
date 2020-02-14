@@ -9,7 +9,7 @@ using System.Web;
 
 namespace MVCShopAdo.ServiceView
 {
-    public class GoodViewService : IServiceView<GoodView>
+    public class GoodViewService : IServiceView<GoodViewModel>
     {
         IService<GoodDTO> service;
         IMapper mapper;
@@ -19,34 +19,34 @@ namespace MVCShopAdo.ServiceView
             this.service = service;
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<GoodView, GoodDTO>();
-                cfg.CreateMap<GoodDTO, GoodView>();
+                cfg.CreateMap<GoodViewModel, GoodDTO>();
+                cfg.CreateMap<GoodDTO, GoodViewModel>();
             });
             mapper = config.CreateMapper();
         }
-        public GoodView CreateOrUpdate(GoodView data)
+        public GoodViewModel CreateOrUpdate(GoodViewModel data)
         {
             GoodDTO good = mapper.Map<GoodDTO>(data);
             service.CreateOrUpdate(good);
-            return mapper.Map<GoodView>(good);
+            return mapper.Map<GoodViewModel>(good);
         }
 
-        public GoodView Get(int id)
+        public GoodViewModel Get(int id)
         {
             GoodDTO good = service.Get(id);
-            return mapper.Map<GoodView>(good);
+            return mapper.Map<GoodViewModel>(good);
         }
 
-        public IEnumerable<GoodView> GetAll()
+        public IEnumerable<GoodViewModel> GetAll()
         {
-            return service.GetAll().Select(x => mapper.Map<GoodView>(x));
+            return service.GetAll().Select(x => mapper.Map<GoodViewModel>(x));
         }
 
-        public GoodView Remove(GoodView data)
+        public GoodViewModel Remove(GoodViewModel data)
         {
             GoodDTO good = mapper.Map<GoodDTO>(data);
             service.Remove(good);
-            return mapper.Map<GoodView>(good);
+            return mapper.Map<GoodViewModel>(good);
         }
 
         public void Save()
