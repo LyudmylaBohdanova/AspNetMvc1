@@ -43,6 +43,7 @@ namespace DAL.Repositories
         {
             context.SaveChanges();
         }
+
         ~GenericRepository()
         {
             context.Dispose();

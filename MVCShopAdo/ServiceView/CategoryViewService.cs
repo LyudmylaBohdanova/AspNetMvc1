@@ -26,9 +26,19 @@ namespace MVCShopAdo.ServiceView
         }
         public CategoryViewModel CreateOrUpdate(CategoryViewModel data)
         {
-            CategoryDTO category = mapper.Map<CategoryDTO>(data);
-            service.CreateOrUpdate(category);
-            return mapper.Map<CategoryViewModel>(category);
+            if(data.CategoryId == 0)
+            {
+                CategoryDTO category = mapper.Map<CategoryDTO>(data);
+                service.CreateOrUpdate(category);
+                return mapper.Map<CategoryViewModel>(category);
+            }
+            else
+            {
+                CategoryDTO cat = service.Get(data.CategoryId);
+                cat.CategoryName = data.CategoryName;
+                service.CreateOrUpdate(cat);
+                return mapper.Map<CategoryViewModel>(cat);
+            }
         }
 
         public CategoryViewModel Get(int id)

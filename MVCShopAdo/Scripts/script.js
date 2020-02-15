@@ -10,6 +10,24 @@
     });
 });
 
+$(function () {
+    $('#modal-conten').submit(function () {
+        $.ajax({
+            url: '@Url.Action("EditCategory","Category")',
+            type: "Post",
+            data: $("#modal-conte").serialize(),
+            success: function (result) {
+                if (result.success) {
+                    $("#dialog-alert").html("Data has been updated succeessfully");
+                } else {
+
+                }
+            }
+        });
+        return false;
+    });
+});
+
 
 (function () {
     'use strict';

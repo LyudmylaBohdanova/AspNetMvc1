@@ -26,9 +26,19 @@ namespace MVCShopAdo.ServiceView
         }
         public ManufacturerViewModel CreateOrUpdate(ManufacturerViewModel data)
         {
-            ManufacturerDTO manufacturer = mapper.Map<ManufacturerDTO>(data);
-            service.CreateOrUpdate(manufacturer);
-            return mapper.Map<ManufacturerViewModel>(manufacturer);
+            if(data.ManufacturerId == 0)
+            {
+                ManufacturerDTO manufacturer = mapper.Map<ManufacturerDTO>(data);
+                service.CreateOrUpdate(manufacturer);
+                return mapper.Map<ManufacturerViewModel>(manufacturer);
+            }
+            else
+            {
+                ManufacturerDTO map = service.Get(data.ManufacturerId);
+                map.ManufacturerName = data.ManufacturerName;
+                service.CreateOrUpdate(map);
+                return mapper.Map<ManufacturerViewModel>(map);
+            }
         }
 
         public ManufacturerViewModel Get(int id)

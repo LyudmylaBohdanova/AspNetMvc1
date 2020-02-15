@@ -26,9 +26,19 @@ namespace BLL.Services
         }
         public ManufacturerDTO CreateOrUpdate(ManufacturerDTO dto)
         {
-            Manufacturer man = mapper.Map<Manufacturer>(dto);
-            repository.CreateOrUpdate(man);
-            return mapper.Map<ManufacturerDTO>(man);
+            if(dto.ManufacturerId == 0)
+            {
+                Manufacturer man = mapper.Map<Manufacturer>(dto);
+                repository.CreateOrUpdate(man);
+                return mapper.Map<ManufacturerDTO>(man);
+            }
+            else
+            {
+                Manufacturer manufacturer = repository.Get(dto.ManufacturerId);
+                manufacturer.ManufacturerName = dto.ManufacturerName;
+                repository.CreateOrUpdate(manufacturer);
+                return mapper.Map<ManufacturerDTO>(manufacturer);
+            }
         }
 
         public ManufacturerDTO Get(int id)

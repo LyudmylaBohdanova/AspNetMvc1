@@ -48,12 +48,9 @@ namespace MVCShopAdo.Controllers
             {
                 if (action == "save")
                 {
-                    CategoryViewModel model = new CategoryViewModel()
-                    {
-                        CategoryId = category.CategoryId,
-                        CategoryName = category.CategoryName
-                    };
-                    services.serviceCategory.CreateOrUpdate(model);
+                    CategoryViewModel model = services.serviceCategory.Get(category.CategoryId);
+                    model.CategoryName = category.CategoryName;
+                    services.serviceCategory.CreateOrUpdate(category);
                     TempData["Success"] = $"The category {category.CategoryName} edit success!";
                 }
                 else if (action == "add")

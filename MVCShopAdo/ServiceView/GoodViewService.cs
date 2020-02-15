@@ -26,9 +26,25 @@ namespace MVCShopAdo.ServiceView
         }
         public GoodViewModel CreateOrUpdate(GoodViewModel data)
         {
-            GoodDTO good = mapper.Map<GoodDTO>(data);
-            service.CreateOrUpdate(good);
-            return mapper.Map<GoodViewModel>(good);
+            if(data.GoodId == 0)
+            {
+                GoodDTO good = mapper.Map<GoodDTO>(data);
+                service.CreateOrUpdate(good);
+                return mapper.Map<GoodViewModel>(good);
+            }
+            else
+            {
+                GoodDTO gd = service.Get(data.GoodId);
+                gd.CategoryId = data.CategoryId;
+                gd.GoodCount = data.GoodCount;
+                gd.GoodName = data.GoodName;
+                gd.ManufacturerId = data.ManufacturerId;
+                gd.Price = data.Price;
+                gd.ManufacturerName = data.ManufacturerName;
+                gd.CategoryName = data.CategoryName;
+                service.CreateOrUpdate(gd);
+                return mapper.Map<GoodViewModel>(gd);
+            }
         }
 
         public GoodViewModel Get(int id)

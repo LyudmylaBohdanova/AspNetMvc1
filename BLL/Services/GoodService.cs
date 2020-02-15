@@ -29,9 +29,23 @@ namespace BLL.Services
 
         public GoodDTO CreateOrUpdate(GoodDTO dto)
         {
-            Good good = mapper.Map<Good>(dto);
-            repository.CreateOrUpdate(good);
-            return mapper.Map<GoodDTO>(good);
+            if(dto.GoodId == 0)
+            {
+                Good good = mapper.Map<Good>(dto);
+                repository.CreateOrUpdate(good);
+                return mapper.Map<GoodDTO>(good);
+            }
+            else
+            {
+                Good gd = repository.Get(dto.GoodId);
+                gd.CategoryId = dto.CategoryId;
+                gd.GoodCount = dto.GoodCount;
+                gd.GoodName = dto.GoodName;
+                gd.ManufacturerId = dto.ManufacturerId;
+                gd.Price = dto.Price;
+                repository.CreateOrUpdate(gd);
+                return mapper.Map<GoodDTO>(gd);
+            }
         }
 
         public GoodDTO Get(int id)
