@@ -1,16 +1,20 @@
 ﻿@using MVCShopAdo.Models
 @model IEnumerable<GoodViewModel>
 
+
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th style="text-align:center">ID</th>
-            <th style="text-align:center">Good</th>
-            <th style="text-align:center">Category</th>
-            <th style="text-align:center">Manufacturer</th>
-            <th style="text-align:center">Price</th>
-            <th style="text-align:center">Count</th>
-            <th style="text-align:center">Action</th>
+            <th style="text-align:center;">ID</th>
+            <th style="text-align:center;">Good</th>
+            <th style="text-align:center;">Category</th>
+            <th style="text-align:center;">Manufacturer</th>
+            <th style="text-align:center;">Price</th>
+            <th style="text-align:center;">Count</th>
+            @if (ViewBag.UserRole == 1)
+            {
+            <th style="text-align:center;">Action</th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -23,10 +27,14 @@
                 <td>@good.ManufacturerName</td>
                 <td>@Math.Round(good.Price, 2)</td>
                 <td>@Math.Round(good.GoodCount, 0)</td>
-                <td style="text-align:center">
-                    @Html.ActionLink("Edit", "EditGood", "Good", new { @id = good.GoodId }, 
-                   new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
-                </td>
+                @if (ViewBag.UserRole == 1)
+                {
+                    <td style="text-align:center" id="accessAdmin">
+                        @Html.ActionLink("Edit", "EditGood", "Good", new { @id = good.GoodId },
+                        new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
+                    </td>
+                }
+                
             </tr>
         }
     </tbody>

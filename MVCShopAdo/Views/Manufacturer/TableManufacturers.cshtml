@@ -6,7 +6,10 @@
         <tr>
             <th style="text-align:center">Id</th>
             <th style="text-align:center">Manufacturer</th>
-            <th style="text-align:center">Action</th>
+            @if (ViewBag.UserRole == 1)
+            {
+                <th style="text-align:center;">Action</th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -15,10 +18,13 @@
             <tr>
                 <td>@man.ManufacturerId</td>
                 <td>@man.ManufacturerName</td>
-                <td style="text-align:center">
-                    @Html.ActionLink("Edit", "EditManufacturer", "Manufacturer", new { @id = man.ManufacturerId }, 
-                   new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
-                </td>
+                @if (ViewBag.UserRole == 1)
+                {
+                    <td style="text-align:center">
+                        @Html.ActionLink("Edit", "EditManufacturer", "Manufacturer", new { @id = man.ManufacturerId },
+                         new { @class = "btn btn-outline-info btn-block compItem", @toggle = "modal", @target = "#editModal" })
+                    </td>
+                }
             </tr>
         }
     </tbody>
